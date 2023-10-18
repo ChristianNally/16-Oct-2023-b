@@ -3,9 +3,9 @@
 ### To Do
 - [ ] Review primitive types
 - [ ] Objects!
+- [ ] Object iteration with `for..in`
 - [ ] Passing primitives and objects to functions
 - [ ] Functions inside objects (using `this`)
-- [ ] Object iteration with `for..in`
 
 ### Primitive Types
 - JavaScript has 7 primitive types:
@@ -23,7 +23,7 @@ const nul = null;
 const undef = undefined;
 const num = 5;
 const bigint = 9007199254740991n;
-const str = 'This is a string';
+const str = 'This is a string';  // "double quotes", `back ${bool} ticks`, 'back ${bool} ticks'
 const sym = Symbol('symbol');
 ```
 
