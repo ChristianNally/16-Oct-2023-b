@@ -1,23 +1,17 @@
 {
-  "name": "w02d1",
+  "name": "w02d1_tdd_mocha_chai",
   "version": "1.0.0",
-  "description": "code that exemplifies testing, assertions and test driven development",
-  "main": "hello-world.js",
+  "description": "### To Do - [x] Manual testing - [x] Bringing in outside code - [x] Making assertions - [x] Exporting our code - [x] Intro to NPM: a Node package manager - [] Mocha test runner - [] Ignoring files/folders - [] What is TDD? - [] Chai assertion library",
+  "main": "hello-world-test.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
-  "keywords": [
-    "TDD",
-    "testing",
-    "mocha",
-    "chai",
-    "LHL",
-    "Bootcamp"
-  ],
-  "author": "me",
+  "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "mocha": "^10.2.0"
+  },
   "dependencies": {
-    "chai": "^4.3.4",
-    "mocha": "^8.3.2"
+    "chai": "^4.3.10"
   }
 }
