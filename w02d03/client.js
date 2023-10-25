@@ -1,10 +1,12 @@
 const net = require('net');
 
+// create a configuration object
 const config = {
   port: 49007,
   host: 'localhost'
 };
 
+// create a connection to the server
 const connection = net.createConnection(config);
 
 // set the encoding on the connection
@@ -18,6 +20,10 @@ connection.on('data', (data) => {
   console.log('server says:', data);
 });
 
+////////////////////////////////
+// Reading from stdin
+////////////////////////////////
+
 // set the encoding on stdin
 process.stdin.setEncoding('utf-8');
 
@@ -26,7 +32,7 @@ process.stdin.on('data', (data) => {
   // send the data to the server
   console.log('data', data);
 
-  // 'a\n' => .trim => 'a'
+  // 'a\n' => .trim() => 'a'
   data = data.trim();
 
   if (data === 'a') {

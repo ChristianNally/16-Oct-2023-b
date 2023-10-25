@@ -3,7 +3,10 @@ const net = require('net');
 // create the server
 const server = net.createServer();
 
-// listen for incoming connections
+// choose a port
+const port = 49007;
+
+// listen for incoming connections - the callback is called once for each new connection
 server.on('connection', (connection) => {
   console.log('someone has connected to the server');
 
@@ -19,8 +22,7 @@ server.on('connection', (connection) => {
   });
 });
 
-// start the server (373, 49007)
-const port = 49007;
+// start the server
 server.listen(port, () => {
   console.log(`the server is listening on port ${port}`);
 });

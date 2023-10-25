@@ -5,72 +5,28 @@
 - [x] TCP introduction
 - [x] TCP demo
 
-### Networking
-* two computers talking to each other
+### What is networking?
+- Communication between machines on a network
 
-* servers => have information
-* clients => want information
+### What is a protocol?
+- A defined standard for how requests and responses are sent between network devices
 
-2nd house on the left
-postal code
-street address
-apt number
+### Transport Layer Protocols
+- Break data into packets to be sent over the network layer
+- Give each packet a header with origin and destination
+- **UDP**: **U**ser **D**atagram **P**rotocol
+  - Smaller header size (8 bytes) which results in smaller packet sizes
+  - _Connectionless_ ie. there is no need to establish or maintain a connection
+  - No error recovery (any corrupted packets are discarded)
+  - Packets can arrive in any order
+  - Useful for streaming/low latency applications
+- **TCP**: **T**ransmission **C**ontrol **P**rotocol
+  - Larger header size (20 bytes)
+  - Requires a connection (3-way handshake)
+  - Corrupted packets are reported to the server and are re-sent
+  - Packets arrive in order
+  - Useful when guaranteed communication is needed
 
-2^8
-
-### Internet Protocol (IP)
-* IP address (street number)
-  * IPv4 192.168.0.0 127.0.0.1
-  * IPv6 2001:db8:3333:4444:5555:6666:7777:8888
-* Port (apt number)
-  * 65,535 ports to choose from
-  * 80 HTTP
-  * 443 HTTPS
-  * 22 SSH
-  * 5432 Postgres
-  * 3000 - 8000 dev ports
-
-### Packets
-* all data is broken into packets
-* header => who sent it and where is it going
-
-### Transmission Control Protocol (TCP)
-* header size is larger
-* requires a connection (triple handshake)
-* packet loss detection 1/500 2/500 missing packets are re-sent
-* packets are guaranteed to arrive in order
-
-### User Datagram Protocol (UDP)
-* header is smaller
-* connectionless
-* missing packets are gone
-* packets can arrive in any order
-
-
-lodash
-
-jQuery $
-
-const _ = require('lotide')
-_.middle
-
-
-### Event-Driven Development
-* program against events happenning
-  * someone connected to the server
-  * someone disconnected
-  * someone sent a message
-
-button.addEventListener('click', () => {});
-
-
-'Move: up'
-'Move: down'
-
-'move down'
-
-
-
-
-
-
+### Useful Links
+* [OSI Model](https://en.wikipedia.org/wiki/OSI_model)
+* [Net package documentation](https://nodejs.org/api/net.html)
