@@ -10,7 +10,7 @@ const data = [
 // Ensure there are no duplicate values in the array.
 
 const getHobbies = (users) => {
-
+  
 };
 
 const result = getHobbies(data);
