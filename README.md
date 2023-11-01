@@ -7,3 +7,4 @@
 * [W02D03 - Networking with TCP](/w02d03)
 * [BREAKOUT - Technical Interview Prep](/breakout-ti-prep/)
 * [W03D03 - HTTP Cookies & User Authentication](/w03d03)
+* [W03D04 - Security & Real World HTTP Servers](/w03d04)
