@@ -7,8 +7,8 @@
 - [x] Exporting our code
 - [x] Intro to NPM: a Node package manager
 - [x] Mocha test runner
-- [] Chai assertion library
-- [] Ignoring files/folders
+- [x] Chai assertion library
+- [x] Ignoring files/folders
 - [] What is TDD?
 
 ### `module.exports` and `require`
