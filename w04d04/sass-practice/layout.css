@@ -1,0 +1,38 @@
+h1 {
+  color: maroon;
+  border: 10px solid yellow;
+}
+
+#heading, .header {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.header {
+  color: hotpink;
+}
+
+div {
+  color: yellow;
+}
+div p {
+  color: green;
+  font-size: 2rem;
+}
+div section p {
+  font-size: 10px;
+}
+
+.small-square {
+  width: 250px;
+  height: 250px;
+  color: yellow;
+  border: 2px solid yellow;
+}
+
+.large-square {
+  width: 500px;
+  height: 500px;
+  color: #EEEEEE;
+  border: 2px solid #EEEEEE;
+}

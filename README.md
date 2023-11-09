@@ -8,3 +8,6 @@
 * [BREAKOUT - Technical Interview Prep](/breakout-ti-prep/)
 * [W03D03 - HTTP Cookies & User Authentication](/w03d03)
 * [W03D04 - Security & Real World HTTP Servers](/w03d04)
+* [W04D01 - Intro to CSS](/w04d1_intro_to_css/)
+* [W04D02 - Client-side JavaScript and jQuery](/w04d2_jquery/)
+* [W04D04 - Responsive Design and SASS](/w04d04)
