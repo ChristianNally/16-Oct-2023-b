@@ -1,0 +1,46 @@
+@import 'variables';
+
+h1 {
+  color: $fontColor;
+  border: $border;
+}
+
+#heading {
+  font-size: 2em;
+  text-decoration: underline;
+}
+
+.header {
+  @extend #heading;
+  color: hotpink;
+}
+
+div {
+  color: yellow;
+
+  p {
+    color: green;
+    font-size: 2rem;
+  }
+
+  section {
+    p {
+      font-size: 10px;
+    }
+  }
+}
+
+@mixin makeSquare($num, $color) {
+  width: $num * 50px;
+  height: $num * 50px;
+  color: $color;
+  border: 2px solid $color;
+}
+
+.small-square {
+  @include makeSquare(5, yellow);
+}
+
+.large-square {
+  @include makeSquare(10, #EEEEEE);
+}
