@@ -11,3 +11,4 @@
 * [W04D01 - Intro to CSS](/w04d1_intro_to_css/)
 * [W04D02 - Client-side JavaScript and jQuery](/w04d2_jquery/)
 * [W04D04 - Responsive Design and SASS](/w04d04)
+* [W05D03 - SQL from our Apps](/w05d03)
