@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('./connection');
 
 const getProducts = () => {
   return db.query('SELECT * FROM products;')
