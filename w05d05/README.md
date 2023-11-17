@@ -8,92 +8,97 @@
 * reinforce your current knowledge
 
 ### Pick a Project
+- Wiki Map
+- Quiz App
+- Story Creator
+- Decision Maker
+- PasswordKeepR
+- Smart TODO List
+- Resource Wall
+- Buy/Sell Listing Website
+- Schoodle
+- Food Pick-up Ordering
 
 ### User Stories
-* describes how a user will interact with the app
-* As a _____, I can ____, because _____
+- A _user story_ describes how users will interact with your application
+- They have the form: As a ______, I want to ______, because ______.
+- eg. As a _user_, I want to _be able to save posts_, because _I want to review them later_.
+- User stories can also be negated: As a _____, I shouldn't be able to ______, because _____.
+- eg. As a _user_, I shouldn't be able to _edit other users posts_, because _I don't own those posts_.
 
+### User Scenarios
+- A _user scenario_ is a syntactic alternative to user stories
+- They have the form: Given _____, when ______, then ______.
+- eg. Given _that I am logged in_, when _I click favourite on a post_, then _it is added to my favourites_.
+- You can also chain on an _and_ to user stories/scenarios
+- eg. Given _that I am logged in_, when _I click favourite on a post_, then _it is added to my favourites_ **and** _the save icon will change to indicate success_.
 
-* As a logged in user, I can save a resource, because I want to share it with others
-* As a logged in user, I can create a map, because I want to share things in my area
-* As a non logged in user, I cannot edit the pins on a map, because they don't belong to me
-
-/planning/user-stories.md
-
-### Nouns are resources
-* each noun is a table
-* make an ERD
-* simplest format
-
-/planning/erd.png
-/planning/erd-stretch.png
+### ERD
+- The user stories provide you with nouns (eg. user, posts, favourites)
+- Use these nouns/entities to build out your database (ie. tables are the nouns from the stories)
 
 ### Routes
-* CRUD/BREAD routes for each resource
-* REST convention
+- Once you know the resources that you'll have, write out the routes that you'll need to perform BREAD operations on those resources
+- Remember RESTful conventions (they make it much easier)
 
-Browse  GET   /resources
-Read    GET   /resources/:id
-Edit    POST  /resources/:id
-Add     POST  /resources
-Delete  POST  /resources/:id/delete
+### MVP vs MVD
+- There is a concept in development of an MVP, the Minimum Viable Product
+- An MVP has just enough features to be useful to a user
+- This concept helps streamline the development process and help keep the team on target
+- For mid-terms, we want to focus on the MVD, the Minimum Viable Demo
+- **If you aren't going to demo it, don't build it**
 
-/planning/routes.md
+### Wireframes
+- Draw out the structure of your web pages
+- This will make it much easier to build out these pages later
+- This is also a great opportunity to get input from all of the team members
+- Design matters... however you are a developer, not a designer
+- Get inspiration from websites you visit
 
-### MVP
-* Minimum Viable Product
-* @KV Minimum Viable Demo (MVD)
-* what is the minimum feature set that we can show off in 5 mins
-* if you're not gonna show it, don't build it
-
-### Wireframes/Mockups
-* as a team
-* lowest fidelity possible
-
-/planning/wireframe.png
-
-### User Login/Registration
-* don't do it
+### User Login
+- Don't do it
+- Seriously, don't do it
+- We know that you know how to register and login users
 
 ```js
-// http://localhost:8001/login/5
+// do this instead
 app.get('/login/:id', (req, res) => {
-  // encrypted cookies
+  // using encrypted cookies
   req.session.user_id = req.params.id;
 
-  // plaintext cookies
+  // or using plain-text cookies
   res.cookie('user_id', req.params.id);
 
   // send the user somewhere
-  res.redirect('/home');
+  res.redirect('/');
 });
 ```
 
 ### Tech Choices
-* Front End: HTML, CSS, JS, jQuery, bootstrap, tailwind
-* Back End: Node, Express, Postgres
+- We have made all the tech choices for you
+- Back End: Node and Express
+- Front End: HTML, CSS, JS, jQuery, Bootstrap
 
+### The Mid-term Skeleton
+- Use the provided `node-skeleton` as a template for your project
+- This will get you up and running quickly
 
-1. create a .scss file in the styles directory (layout.scss)
-2. create a link tag that points to the css version of that file (layout.css)
-3. middleware will compile the .scss into .css (layout.scss => layout.css)
-4. express static middleware will serve it up
+### SPA vs Multi-page App
+- These concepts are not mutually exclusive
+- You can choose one or the other or both
 
-### SPA vs Multi-page (MPA)
-* these are not mutually exclusive
+### Git
+- Use Git best practices (ask a mentor for clarification if you need it)
+- Use branches
 
-### DO NOT CODE ON MASTER/MAIN
+### DO NOT CODE ON MASTER
+- I repeat, do not code on master
 
-### Splitting up the work
+### Splitting up the Work
 * Vertical => each member works on a piece of the FE, BE, and database
 * Horizontal => each member working on a different layer (FE, BE, or database)
 * Pair programming
 
-
-
-
-
-
-
-
-
+### Communication
+- Make sure to communicate with your team members
+- Use Slack, iMessage, Google Hangouts, whatever... just make sure that everyone is on the same page
