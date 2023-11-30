@@ -1,27 +1,18 @@
 export default function Reply(props) {
-
-    const reply = props.reply;
-    const incrementReplyCount = props.incrementReplyCount;
-
-    console.log('reply', reply);
-
-// {
-//     user: 1,
-//     bodyText: 'yes, I see 6',
-//     likeCount: 0
-// },
-
+    console.log('props.reply', props.reply);
     return (
 <div className="reply">
-<div className="user">User Id:{reply.user}</div>
-<div className="reply">Reply Id:{reply.id}</div>
-<div className="count">Like Count:{reply.likeCount}</div>
-<p>{reply.bodyText}</p>
+<div className="user">User Id:{props.reply.user}</div>
+<div className="reply">Reply Id:{props.reply.id}</div>
+<div className="count">Like Count:{props.reply.likeCount}</div>
+<p>{props.reply.bodyText}</p>
 <div className="counter">
-    <button>-</button>
-    {reply.likeCount}
     <button onClick={() => {
-        incrementReplyCount(reply.id);
+        props.decrementReplyCount(props.reply.id);
+    }}>-</button>
+    {props.reply.likeCount}
+    <button onClick={() => {
+        props.incrementReplyCount(props.reply.id);
     }}>+</button>
     </div>
 </div>

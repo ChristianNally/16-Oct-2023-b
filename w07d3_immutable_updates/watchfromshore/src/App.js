@@ -1,10 +1,15 @@
 import logo from './logo.svg';
-import { useState } from 'react';
+import { useReducer } from 'react';
 import Header from './components/Header.jsx';
 import ReplyList from './components/ReplyList.jsx';
 import Footer from './components/Footer.jsx';
 import Sighting from './components/Sighting.jsx';
 import './App.css';
+
+//
+// this is where we import the reducer function (the reducer function consolidates all the state changes)
+//
+import reducer, { INCREMENT_REPLY_LIKE_COUNT, DECREMENT_REPLY_LIKE_COUNT } from './reducers/sightingStateReducer.js';
 
 const users = [
   {
@@ -43,30 +48,34 @@ const stateDefault = {
         likeCount: 3
       }
   ]
-}
+};
 
 function App() {
 
-  const [sighting, setSighting] = useState(stateDefault);
+	//  const [sighting, setSighting] = useState(stateDefault); // this is the state
+	const [sighting, dispatch] = useReducer(reducer, stateDefault);
 
-  const incrementReplyCount = (replyId) => {
-    const reply_index = sighting.replies.findIndex(reply => reply.id === replyId);
-    
-    setSighting((prev) => {
-      const newReplies = [...prev.replies]; // build up a deep copy
-      const updatedSighting = {...prev, replies: newReplies};
-      updatedSighting.replies[reply_index].likeCount++; // actually update it
-      return updatedSighting;
-    });
-  };
-  
+	//
+	// this is where we dispatch the action to the reducer function
+	//
+	// we will NOT pass dispatch down to the components. that means we don't have to think 
+	// about the reducer function in the components. instead we will pass down the following helper functions
+	//
+	const incrementReplyCount = (reply_index) => {
+		dispatch({type: INCREMENT_REPLY_LIKE_COUNT, payload: reply_index});
+	};
+
+	const decrementReplyCount = (reply_index) => {
+		dispatch({type: DECREMENT_REPLY_LIKE_COUNT, payload: reply_index});
+	};
+
   return (
     <>
       <Header />
       <main>
         <Sighting users={users} sighting={sighting}/>
       </main>
-      <ReplyList replies={sighting.replies} incrementReplyCount={incrementReplyCount}/>
+      <ReplyList replies={sighting.replies} decrementReplyCount={decrementReplyCount} incrementReplyCount={incrementReplyCount}/>
       <Footer />
     </>
   );
