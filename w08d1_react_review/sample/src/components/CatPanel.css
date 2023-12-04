@@ -1,0 +1,14 @@
+article {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	border: 1px solid #ccc;
+}
+
+button {
+	border: 1px solid #ccc;
+}
+
+img {
+	border: 1px solid #ccc;
+}
