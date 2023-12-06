@@ -8,12 +8,13 @@ const Game = (props) => {
     state,
     status,
     setPlayerSelection,
+    toggleIsCheating
   } = props;
   
   return (
     <div>
       <main className="game">
-        <Computer state={state} />
+        <Computer state={state} toggleIsCheating={toggleIsCheating} />
         <Player
           state={state}
           setPlayerSelection={setPlayerSelection}

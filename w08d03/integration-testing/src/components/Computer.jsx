@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Computer = (props) => {
-  const {state} = props;
+  const {state, toggleIsCheating} = props;
 
   const mappedOptions = state.options.map((option) => {
     const [choice, symbol] = option;
@@ -19,6 +19,9 @@ const Computer = (props) => {
       <span
         role="img" 
         aria-label="robot" 
+        data-testid="robot-head"
+        onClick={toggleIsCheating}
+        className={state.isCheating ? 'cheating' : null}
       >
         🤖
       </span>
