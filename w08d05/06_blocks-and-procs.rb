@@ -45,4 +45,3 @@ def accepting_invis_block
 end
 
 accepting_invis_block &my_block
-

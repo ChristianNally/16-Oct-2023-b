@@ -37,9 +37,3 @@ last_name = 'wonderland'
 
 puts 2 == '2'
 puts 2 === '2'.to_i
-
-
-
-
-
-
